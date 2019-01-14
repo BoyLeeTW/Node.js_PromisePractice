@@ -18,7 +18,7 @@ async function startAsyncTask() {
 function startPromiseTask() {
     logAfter('2000', 2000)
         .then(logAfter.bind(null, '1000', 1000))
-        .then(logAfter.bind(null, '500',500))
+        .then(() => logAfter('500',500))
         .then(logAfter.bind(null, '3000',3000))
 }
 
